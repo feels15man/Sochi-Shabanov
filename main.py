@@ -22,13 +22,14 @@ class Test(QMainWindow):
         layout.addWidget(self.label, 1, 0)
 
     def draw(self):
+        v = randint(10, 100)
         x, y = [randint(10, 500) for i in range(2)]
-        w, h = [randint(10, 100) for i in range(2)]
+        w, h = v, v
         # создаем экземпляр QPainter, передавая холст (self.label.pixmap())
         painter = QPainter(self.label.pixmap())
         pen = QPen()
         pen.setWidth(3)
-        pen.setColor(QColor(*[randint(0, 255) for i in range(3)]))
+        pen.setColor(QColor(247, 242, 26))
         painter.setPen(pen)
         painter.drawEllipse(x, y, w, h)
         painter.end()
